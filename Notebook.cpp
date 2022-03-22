@@ -5,14 +5,14 @@ using namespace ariel;
 
 void Notebook::write(int page, int row, int column, Direction d, string const &str)
 {
-    if (column >= 100)
-    {
-        throw invalid_argument("column is out of bound");
-    }
-    if (d == Direction::Horizontal && str.size() > 100 - column)
-    {
-        throw invalid_argument("string is ending out of bound");
-    }
+    // if (column >= 100)
+    // {
+    //     throw invalid_argument("column is out of bound");
+    // }
+    // if (d == Direction::Horizontal && str.size() > 100 - column)
+    // {
+    //     throw invalid_argument("string is ending out of bound");
+    // }
     // if (str.size() == 0)
     // {
     //     return;
