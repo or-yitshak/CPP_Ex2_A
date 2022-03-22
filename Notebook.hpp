@@ -6,20 +6,26 @@
 #include "Direction.hpp"
 using namespace std;
 
-namespace ariel { 
+namespace ariel
+{
     class Notebook
     {
     private:
         vector<Page> pages;
 
     public:
-        void write(unsigned int page, unsigned int row, unsigned int column, Direction d, string const &str); // col<100 and if direction horizontal str.size<100-column
+        void write(int page, int row, int column, Direction d, string const &str); // col<100 and if direction horizontal str.size<100-column
 
-        string read(unsigned int page, unsigned int row, unsigned int column, Direction d, unsigned int num_to_read);
+        string read(int page, int row, int column, Direction d, int num_to_read);
 
-        void erase(unsigned int page, unsigned int row, unsigned int column, Direction d, unsigned int num_to_erase);
+        void erase(int page, int row, int column, Direction d, int num_to_erase);
 
-        void show(unsigned int page_num);
+        void show(int page_num);
+
+        // Notebook()
+        // {
+
+        // }
         // void printStudent() const {
         // 	//this->_id = "12"";"
         // 	cout << "*****************************************" << endl;

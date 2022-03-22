@@ -105,6 +105,15 @@ TEST_CASE("Bad input")
     CHECK_THROWS(notebook.erase(0, 0, 0, Direction::Vertical, 0)); // should throw because number of chras to erase should be > 0.
     CHECK_THROWS(notebook.read(0, 0, 0, Direction::Vertical, 0)); // should throw because number of chras to read should be > 0.
 
+    CHECK_THROWS(notebook.write(0, 0, 0, Direction::Vertical, "\t")); // should throw because char is not printable.
+    CHECK_THROWS(notebook.write(0, 0, 0, Direction::Vertical, "\n")); // should throw because char is not printable.
+    CHECK_THROWS(notebook.write(0, 0, 0, Direction::Vertical, "\r")); // should throw because char is not printable.
+
+    CHECK_THROWS(notebook.write(-1, 0, 0, Direction::Vertical, "xd")); // should throw because number < 0.
+    CHECK_THROWS(notebook.read(0, -1, 0, Direction::Vertical, -5)); // should throw because number < 0.
+    CHECK_THROWS(notebook.erase(0, 0, -1, Direction::Vertical, -16)); // should throw because number< 0.
+
+
 
 
 
